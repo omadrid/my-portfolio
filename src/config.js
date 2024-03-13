@@ -1,26 +1,22 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'oliviajmadrid@gmail.com',
 
   socialMedia: [
     {
+      name: 'GitLab',
+      url: 'https://gitlab.com/omadrid',
+    },
+    {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://github.com/omadrid',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/oliviajmadrid',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/madridoli',
     },
   ],
 
@@ -34,19 +30,16 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
-      url: '/#projects',
-    },
-    {
       name: 'Contact',
       url: '/#contact',
     },
   ],
 
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
+    // ojm
+    green: '#ffba08',
+    navy: '#1a1a1a',
+    darkNavy: '#0f0f0f',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({
