@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
+import { openPopupWidget } from 'react-calendly';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -39,34 +39,45 @@ const StyledContactSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
+
+  .calendly-link {
+    ${({ theme }) => theme.mixins.bigButton};
+    margin-left: 16px;
+  }
 `;
 
 const Contact = () => {
   const revealContainer = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    sr.reveal(revealContainer.current, srConfig());
-  }, []);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+  const onCalendlyButtonClick = useCallback(
+    () =>
+      openPopupWidget({
+        url: 'https://calendly.com/oliviajmadrid',
+        pageSettings: {
+          backgroundColor: '#0a1a2e',
+          primaryColor: '#ffcc00',
+          textColor: '#cbd6f6',
+          hideGdprBanner: true,
+          hideLandingPageDetails: true,
+        },
+      }),
+    [],
+  );
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading overline">What’s Next?</h2>
-
       <h2 className="title">Get In Touch</h2>
-
       <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+        My inbox is always open. Whether you have a question or just want to say hi, I'll try my
+        best to get back to you!
       </p>
-
       <a className="email-link" href={`mailto:${email}`}>
         Say Hello
       </a>
+      <button className="calendly-link" onClick={onCalendlyButtonClick}>
+        Let's meet!
+      </button>
     </StyledContactSection>
   );
 };
