@@ -36,10 +36,9 @@ module.exports = {
   ],
 
   colors: {
-    // ojm
     green: '#ffba08',
-    navy: '#1a1a1a',
-    darkNavy: '#0f0f0f',
+    navy: '#121212',
+    darkNavy: '#000000',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

@@ -4,10 +4,10 @@ module.exports = {
   siteMetadata: {
     title: 'Olivia Madrid',
     description:
-      'Olivia Madrid is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.', // ojm
+      'Olivia Madrid is a software engineer who specializes in building and scaling exceptional web applications.',
     siteUrl: 'https://oliviamadrid.dev', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder ojm
-    twitterUsername: '@bchiang7',
+    image: '/og.png',
+    twitterUsername: '@rivra',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
